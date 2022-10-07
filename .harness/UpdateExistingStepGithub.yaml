@@ -1,0 +1,27 @@
+pipeline:
+  name: UpdateExistingStepGithub
+  identifier: UpdateExistingStepGithub
+  projectIdentifier: ExistingPipeLineNdInputSet
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: q1
+        identifier: q1
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: s1
+                  identifier: s1
+                  template:
+                    templateRef: usedStepInPipeline
+                    versionLabel: v1
+                    templateInputs:
+                      type: HarnessApproval
+                      spec:
+                        approvers:
+                          userGroups: <+input>
+        tags: {}
