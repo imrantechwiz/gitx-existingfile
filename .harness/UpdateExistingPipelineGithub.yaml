@@ -14,14 +14,16 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: t1
-                  identifier: t1
-                  template:
-                    templateRef: usedStepInPipeline
-                    versionLabel: v1
-                    templateInputs:
-                      type: HarnessApproval
-                      spec:
-                        approvers:
-                          userGroups: <+input>
+                  type: HarnessApproval
+                  name: Q1
+                  identifier: Q1
+                  spec:
+                    approvalMessage: Please review the following information and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      userGroups: <+input>
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                    approverInputs: []
+                  timeout: 1d
         tags: {}
