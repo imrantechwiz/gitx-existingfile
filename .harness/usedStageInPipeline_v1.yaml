@@ -5,15 +5,15 @@ template:
   type: Stage
   projectIdentifier: ExistingPipeLineNdInputSet
   orgIdentifier: default
-  tags: {}
+  tags: { }
   spec:
     type: Approval
     spec:
       execution:
         steps:
           - step:
-              name: Q1
-              identifier: Q1
+              name: W1
+              identifier: W1
               template:
                 templateRef: usedStepInPipeline
                 versionLabel: v1
